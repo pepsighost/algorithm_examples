@@ -2,9 +2,10 @@
     Bubble sort
 
     set a swap counter to a non-zero value
-    until the swap counter is 0:
+    until the swap counter is 0 (meaning no swaps were performed):
         set the swap counter to 0
-        Iterate over array, comparing each pair and switching them if they are out of order
+        Iterate over array, comparing each pair (where each pair is an element and the element after it) 
+            and switching them if they are out of order
         If any switches are performed, increment the swap counter
 */
 

@@ -1,3 +1,11 @@
+/*
+    Selection sort
+
+    Repeat until no unsorted elements remain:
+        Find the smallest value in the unsorted part of the array
+        Switch the first element of the unsorted array with the position of the smallest value
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
