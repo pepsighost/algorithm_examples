@@ -1,9 +1,10 @@
 /*
-    Selection sort
+    Insertion sort
 
-    Repeat until no unsorted elements remain:
-        Find the smallest value in the unsorted part of the array
-        Switch the first element of the unsorted array with the position of the smallest value
+    for each element in the array:
+        treat every element before the element as sorted 
+        Go backwards through the sorted portion of the array to see where to "insert"
+            the element in question
 */
 
 #include <stdio.h>
@@ -12,7 +13,7 @@
 
 void createRandArray(int arr[], int size, int maxVal);
 void printArray(int arr[], int size);
-void selectionSort(int arr[], int size);
+void insertionSort(int arr[], int size);
 
 int main(void){
 
@@ -34,7 +35,7 @@ int main(void){
     printArray(array, size);
 
     // sort array
-    selectionSort(array, size);
+    insertionSort(array, size);
 
     printf("Sorted array: ");
     printArray(array, size);
@@ -58,22 +59,20 @@ void printArray(int arr[], int size){
 
 }
 
-void selectionSort(int arr[], int size){
+void insertionSort(int arr[], int size){
 
-    int smallest_value, smallest_value_index;
-
-    for (int i = 0; i < size - 1; i++){
-        smallest_value = arr[i];
-        smallest_value_index = i;
-
-        for (int j = i + 1; j < size; j++){
-            if (arr[j] < smallest_value){
-                smallest_value = arr[j];
-                smallest_value_index = j;            
+    int tempVal;
+    for (int i = 1; i < size; i++){
+        //printf("\n");
+        //printArray(arr, size);
+        for (int j = i - 1; j >= 0; j--){
+            if (arr[j] <= arr[j+1]){
+                break;
             }
+            tempVal = arr[j+1];
+            arr[j+1] = arr[j];
+            arr[j] = tempVal;
+            //printArray(arr, size);
         }
-
-        arr[smallest_value_index] = arr[i];
-        arr[i] = smallest_value;
     }
 }
