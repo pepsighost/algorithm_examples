@@ -1,3 +1,13 @@
+/*
+    Bubble sort
+
+    set a swap counter to a non-zero value
+    until the swap counter is 0:
+        set the swap counter to 0
+        Iterate over array, comparing each pair and switching them if they are out of order
+        If any switches are performed, increment the swap counter
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
