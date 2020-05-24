@@ -29,9 +29,9 @@ def bubble_sort(arr):
                 
 
 def main():
-    # for now let the array size be 50 and max integer be 100
-    size = 10
-    maxVal = 100
+
+    size = int(input("Size of array: "))
+    maxVal = int(input("Maximum value: "))
 
     array = create_array(size, maxVal)
 
